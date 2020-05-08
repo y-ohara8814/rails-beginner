@@ -4,6 +4,9 @@
   </div>
   <ul>
     <% if user_signed_in? %>
+      <li>ようこそ、
+        <%= current_user.name %>さん(ユーザーID：<%= current_user.id%>)
+      </li>
       <li>
         <%= link_to("質問作成", "/questions/new") %>
       </li>

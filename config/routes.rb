@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   get "/users/:id", to: "users#show"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'questions#index'
-  get "/questions", to: "questions#index" 
-  get "/questions/new", to: "questions#new"
-  post "/questions", to: "questions#create"
-  get "/questions/:id", to: "questions#show"
+  # get "/questions", to: "questions#index" 
+  # get "/questions/new", to: "questions#new"
+  # post "/questions", to: "questions#create"
+  # get "/questions/:id", to: "questions#show"
+  # #編集
+  # get "/questions/:id/edit", to "questions#edit"
+  # patch "/questions/:id", to "questions#update"
+  # delete "/questions:id", to "questions#delete"
+  resources :questions
 end
