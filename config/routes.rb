@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   # get "/questions/:id/edit", to "questions#edit"
   # patch "/questions/:id", to "questions#update"
   # delete "/questions:id", to "questions#delete"
-  resources :questions
+  # resources :questions
+  # resources :answers
+  resources :questions do
+    resources :answers, only: [:create]
+  end
 end
