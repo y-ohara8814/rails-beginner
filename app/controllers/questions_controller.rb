@@ -7,6 +7,8 @@ class QuestionsController < ApplicationController
         else
             @text = 'ご利用になるには、新規登録またはログインしてください'
         end
+
+        @question = Question.includes(:user).all
     end
 
     def show
