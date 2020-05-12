@@ -12,7 +12,13 @@
     <% @question.each do |question| %>
         <tr>
             
-            <td><%= link_to(question.title, "/questions/#{question.id}") %></td>
+            <td>
+            <% if user_signed_in? %>
+            <%= link_to(question.title, "/questions/#{question.id}") %>
+            <% else %>
+            <%= question.title %>
+            <% end %>
+            </td>
             <td><%= question.user.name%></td>
                
         </tr>
