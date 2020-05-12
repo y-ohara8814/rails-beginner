@@ -1,6 +1,10 @@
 <h2>ユーザーの詳細ページ</h2>
 <%= @user.name %>
 <hr>
-<% @user.questions.each do |question| %>
-  <%= link_to(question.title, "/questions/#{question.id}") %><br>
+<% if @user.questions.present? %>
+    <% @user.questions.each do |question| %>
+    <%= link_to(question.title, "/questions/#{question.id}") %><br>
+    <% end %>
+<% else %>
+<p>質問がまだありません。質問作成は上のメニューバーから！</p>
 <% end %>

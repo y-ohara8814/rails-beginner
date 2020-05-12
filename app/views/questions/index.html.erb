@@ -1,1 +1,28 @@
 <%= @text %>
+
+<p>みんなの質問</p>
+<table border='1' class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>質問のタイトル</th>
+            <th>質問者</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @question.each do |question| %>
+        <tr>
+            
+            <td>
+            <% if user_signed_in? %>
+            <%= link_to(question.title, "/questions/#{question.id}") %>
+            <% else %>
+            <%= question.title %>
+            <% end %>
+            </td>
+            <td><%= question.user.name%></td>
+               
+        </tr>
+        <% end %>     
+    
+    </tbody>
+</table>

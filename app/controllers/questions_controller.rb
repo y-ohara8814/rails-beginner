@@ -2,7 +2,13 @@ class QuestionsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     before_action :ensure_correct_user, only: [:edit, :update, :destroy]
     def index
-        @text = '質問インデックスページ'
+        if user_signed_in?
+            @text = 'ようこそ、'+ current_user.name + 'さん'
+        else
+            @text = 'ご利用になるには、新規登録またはログインしてください'
+        end
+
+        @question = Question.includes(:user).all
     end
 
     def show
