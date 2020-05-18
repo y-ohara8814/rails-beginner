@@ -33,6 +33,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'  #追加
+  gem 'rspec-rails', '~>3.6.0'  #追加
+  gem 'factory_bot_rails', "~>4.10.0" #追加
 end
 
 group :development do
@@ -43,6 +45,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'spring-commands-rspec' #追加
 end
 
 group :test do
